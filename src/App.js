@@ -89,7 +89,30 @@ const initialTracksList = [
 ]
 
 class App extends Component {
+  state = {
+    searchInputVal: '',
+    songsList: initialTracksList,
+  }
+
+  getSearchInput = event => {
+    this.setState({searchInputVal: event.target.value})
+  }
+
+  getItemToBeDelete = id => {
+    const {songsList} = this.state
+
+    const getDeleteList = songsList.filter(each => each.id !== id)
+
+    this.setState({songsList: getDeleteList})
+  }
+
   render() {
+    const {searchInputVal, songsList} = this.state
+
+    const getFilteredResults = songsList.filter(each =>
+      each.name.toLowerCase().includes(searchInputVal.toLowerCase()),
+    )
+
     return (
       <div className="bg-container">
         <div className="ed-sheeran-banner">
@@ -103,13 +126,19 @@ class App extends Component {
               type="search"
               placeholder="Search"
               className="search-input"
+              value={searchInputVal}
+              onChange={this.getSearchInput}
             />
             <IoIosSearch color="#ffffff" />
           </div>
         </div>
         <ul className="songs-container">
-          {initialTracksList.map(eachItem => (
-            <SongItem details={eachItem} key={eachItem.id} />
+          {getFilteredResults.map(eachItem => (
+            <SongItem
+              details={eachItem}
+              key={eachItem.id}
+              getItemToBeDelete={this.getItemToBeDelete}
+            />
           ))}
         </ul>
       </div>

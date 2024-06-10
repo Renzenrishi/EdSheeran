@@ -43,4 +43,9 @@
   border-width: 0px;
   cursor: pointer;
   color: #ffffff;
+  font-size: 20px;
+}
+
+p {
+  font-size: 24px;
 }

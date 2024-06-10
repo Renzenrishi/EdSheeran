@@ -32,6 +32,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 10px;
 }
 
 .heading {
@@ -59,5 +60,5 @@ body {
 
 .songs-container {
   list-style-type: none;
-  padding: 0px;
+  padding: 10px;
 }
