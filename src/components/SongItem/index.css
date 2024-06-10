@@ -1,0 +1,46 @@
+.song-list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.col-1 {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.track-img {
+  height: 15vh;
+}
+
+.song-desc {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-left: 10px;
+  color: #ffffff;
+}
+
+.genre {
+  color: #3b82f6;
+  margin-top: 0px;
+  font-weight: bold;
+}
+
+.col-2 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 10vw;
+  color: white;
+}
+
+.delete-btn {
+  background-color: transparent;
+  border-width: 0px;
+  cursor: pointer;
+  color: #ffffff;
+}
