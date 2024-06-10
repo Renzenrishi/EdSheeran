@@ -113,6 +113,9 @@ class App extends Component {
       each.name.toLowerCase().includes(searchInputVal.toLowerCase()),
     )
 
+    const noSongsFound =
+      songsList.length === 0 || getFilteredResults.length === 0
+
     return (
       <div className="bg-container">
         <div className="ed-sheeran-banner">
@@ -132,15 +135,19 @@ class App extends Component {
             <IoIosSearch color="#ffffff" />
           </div>
         </div>
-        <ul className="songs-container">
-          {getFilteredResults.map(eachItem => (
-            <SongItem
-              details={eachItem}
-              key={eachItem.id}
-              getItemToBeDelete={this.getItemToBeDelete}
-            />
-          ))}
-        </ul>
+        {noSongsFound ? (
+          <p className="no-songs-found">No Songs Found</p>
+        ) : (
+          <ul className="songs-container">
+            {getFilteredResults.map(eachItem => (
+              <SongItem
+                details={eachItem}
+                key={eachItem.id}
+                getItemToBeDelete={this.getItemToBeDelete}
+              />
+            ))}
+          </ul>
+        )}
       </div>
     )
   }

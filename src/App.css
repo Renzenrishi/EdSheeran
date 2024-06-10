@@ -14,6 +14,7 @@ body {
 .bg-container {
   background-color: #152850;
   font-family: 'Roboto';
+  height: 100vh;
 }
 
 .ed-sheeran-banner {
@@ -61,4 +62,10 @@ body {
 .songs-container {
   list-style-type: none;
   padding: 10px;
+}
+
+.no-songs-found {
+  font-size: 35px;
+  color: #ffffff;
+  text-align: center;
 }
